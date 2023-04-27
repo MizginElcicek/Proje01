@@ -11,7 +11,7 @@ public class Calisan {
     double maasA;
     double toplamM;
 
-    Calisan(String ad,String soyad,int maas,int calSaat,double tarih,double bonus){
+    Calisan(String ad,String soyad,int maas,int calSaat,double tarih,double bonus){// kullanıcı vergiye aldığı maaşı ve 40 saatten fazla çalıştı ise kaç saat çalıştığını girmeli
         this.ad = ad;
         this.soyad = soyad;
         this.maas = maas;
