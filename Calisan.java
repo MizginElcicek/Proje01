@@ -11,7 +11,7 @@ public class Calisan {
     double maasA;
     double toplamM;
 
-    Calisan(String ad,String soyad,int maas,int calSaat,double tarih,double bonus){// kullanıcı vergiye aldığı maaşı ve 40 saatten fazla çalıştı ise kaç saat çalıştığını girmeli
+    Calisan(String ad,String soyad,int maas,int calSaat,double tarih,double bonus){// kullanıcı vergiye aldığı maaşı yazmalı
         this.ad = ad;
         this.soyad = soyad;
         this.maas = maas;
@@ -27,8 +27,13 @@ public class Calisan {
         if(this.maas > 1000){
             this.vergi = (this.maas * 0.03);
         }
+        this.bonus/*sonuc*/ = (this.calSaat/*a*/ % 40);
         if(this.bonus > 0){
-            this.bonus = (this.bonus * 30);
+            if(this.calSaat > 40) {
+                this.bonus *= 30;
+            }else{
+                this.bonus = 0;
+            }
         }
         if(2023 - this.tarih < 10){
             this.maasA = (this.maas * 0.05);
@@ -54,7 +59,7 @@ public class Calisan {
     }
 
     public static void main(String[] args) {
-        Calisan c1 = new Calisan("Azra","Kalem",5000,45,2019,6);
+        Calisan c1 = new Calisan("Azra","Kalem",5000,45,2019);
         c1.addMaas();
 
 
